@@ -8,7 +8,7 @@ package pkg8queens
  *
  * @author uzielgl
  */
-class Tablero {
+class Tablero implements Comparable<Tablero>{
     public ArrayList<Integer> queens = new ArrayList<Integer>();
     
     public Tablero(){
@@ -17,11 +17,11 @@ class Tablero {
         //queens = [5,2,1,4,6,8,7,3]; //4 ataques
         //queens = [2,3,7,6,4,1,5,8]; // 2 ataques
         //queens = [6,5,4,3,8,1,2,7]; // 5 ataques
-        queens = [1,7,5,3,6,4,8,2]; // 2 ataques
+        //queens = [1,7,5,3,6,4,8,2]; // 2 ataques
     }
     
     public String toString(){
-        return queens;
+        return queens.toString() + " calidad: " + getCalidad();
     }
     
     /** Regresa el total de ataques en el tablero, sólo el primer ataque de 
@@ -76,6 +76,9 @@ class Tablero {
         return t.toString();
     }
     
-    
+    /** Lo ordena de menor a mayor considerando su número de ataques*/
+    public int compareTo( Tablero otroTablero ){
+        return getCalidad() - otroTablero.getCalidad();
+    }
 }
 

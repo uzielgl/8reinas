@@ -4,6 +4,9 @@
  */
 package pkg8queens;
 
+import java.util.Collections;
+import java.util.*;
+
 /**
  *
  * @author uzielgl
@@ -15,9 +18,29 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Tablero t = new Tablero();
+        //Tablero t = new Tablero();
         
+        /*
         System.out.println(t.bidimensional() ) ;
         System.out.println( "Ataques : " + t.getCalidad() );
-    }
+        * */
+        
+        Poblacion p = new Poblacion();
+        
+        ArrayList<Tablero> rands = p.get5randoms();
+        
+        ArrayList<Tablero> best2 = p.get2best( rands );
+        
+        ArrayList<Tablero> childs = p.cruzar( best2.get(0), best2.get(1) );
+        
+        /*
+        System.out.println( p.poblacion );
+        */
+        /*
+        Collections.sort( p.poblacion );
+        
+        System.out.println( p.poblacion );
+        * */
+        
+    } 
 }
