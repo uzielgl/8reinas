@@ -4,3 +4,5 @@
 *.jar
 *.war
 *.ear
+/8queens/nbproject/private/
+/8queens/build/
