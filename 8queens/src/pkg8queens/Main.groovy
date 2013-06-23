@@ -29,7 +29,7 @@ public class Main {
         
         
         
-        for( j in 0..30 ){
+        for( j in 1..30 ){
             
             Tablero solucion = null;
             def i = 0;
@@ -49,6 +49,7 @@ public class Main {
 
                 if( p.poblacion.get(0).getCalidad() == 0 ){
                     solucion = p.poblacion.get(0);
+                    i++;
                     break;
                 }
             }
