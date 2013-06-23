@@ -64,6 +64,8 @@ class Poblacion{
     
     
     public mutate( ArrayList<Tablero> ts){
+        
+        
         for( Tablero t: ts){
             if( Math.random() <= mutationProbability  ){
                 t.mutate();

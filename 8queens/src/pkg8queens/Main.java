@@ -26,14 +26,25 @@ public class Main {
         * */
         
         Poblacion p = new Poblacion();
+              
+        
         
         ArrayList<Tablero> rands = p.get5randoms();
+        
+        
         
         ArrayList<Tablero> best2 = p.get2best( rands );
         
         ArrayList<Tablero> childs = p.cruzar( best2.get(0), best2.get(1) );
         
         p.mutate( childs );
+        
+        p.poblacion.addAll( childs );
+        
+        Collections.sort( p.poblacion );
+        
+        p.poblacion = new ArrayList<Tablero>( p.poblacion.subList(0, 100) );
+        
         
         
         
@@ -48,3 +59,4 @@ public class Main {
         
     } 
 }
+
