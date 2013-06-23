@@ -64,8 +64,6 @@ class Poblacion{
     
     
     public mutate( ArrayList<Tablero> ts){
-        
-        
         for( Tablero t: ts){
             if( Math.random() <= mutationProbability  ){
                 t.mutate();
@@ -76,18 +74,10 @@ class Poblacion{
     /** Juntar dos array de posiciones de listas e.g. [1,2,3] [3,4,5,2,1,2] : [1,2,3,4,5,6,7,8]
      *y rellenar los faltantes*/
     public ArrayList join( ArrayList part1, ArrayList part2 ){
-        for( int i : part2 ){
-            if( !( i in part1) ){
-                part1 << i;
-            }
-        }
-        
-        for( i in 1..8){
-            if( !( i in part1 ) ){
-                part1 << i;
-            } 
-        }
-        
+        for( int i : part2 ) if( !( i in part1) ) part1 << i;
+                
+        for( i in 1..8) if( !( i in part1 ) ) part1 << i;
+
         return part1;
     }
    
