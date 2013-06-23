@@ -33,6 +33,10 @@ public class Main {
         
         ArrayList<Tablero> childs = p.cruzar( best2.get(0), best2.get(1) );
         
+        p.mutate( childs );
+        
+        
+        
         /*
         System.out.println( p.poblacion );
         */

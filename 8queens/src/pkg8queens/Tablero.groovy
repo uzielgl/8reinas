@@ -20,6 +20,10 @@ class Tablero implements Comparable<Tablero>{
         //queens = [1,7,5,3,6,4,8,2]; // 2 ataques
     }
     
+    public Tablero( queens ){
+        this.queens = queens;
+    }
+    
     public String toString(){
         return queens.toString() + " calidad: " + getCalidad();
     }
@@ -74,6 +78,39 @@ class Tablero implements Comparable<Tablero>{
             t += tab.toString() + "\n";
         
         return t.toString();
+    }
+    
+    public void setQueens( queens ){
+        this.queens = queens;
+    }
+    
+    
+    public mutate( ){
+        def options = [0,1,2,3,4,5,6,7];
+        def r1 = new Random().nextInt(8); //Primera posición a cambiar
+        def v1 = queens.get( r1 ); // valor de esa posición
+        
+        options.remove( r1 );
+        
+        def r2 = new Random().nextInt(7); //Segunda posición a cambiar
+        def v2 = queens.get( r2 ); // valor de esa posición
+        
+        queens[ r1 ] =  v2;
+        queens[ r2 ] =  v1;
+        /*
+        
+        def i = new Random( ).nextInt( 8 );
+        def t = queens.get(i); //Obtenemos el que se a a in tercambiar
+        
+        queens.remove( i );
+        
+        //como ya es de 7 elementos, insertamos del 0 al 6
+        i = new Random().nextInt( 8 );
+        
+        queens.putAt( 7..<7, t );  //Metemos el que generamos preiamente
+        
+        */
+        //println queens;
     }
     
     /** Lo ordena de menor a mayor considerando su número de ataques*/
