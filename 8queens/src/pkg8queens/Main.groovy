@@ -46,9 +46,9 @@ public class Main {
                 Collections.sort( p.poblacion );
                 
                 p.poblacion = new ArrayList<Tablero>( p.poblacion.subList(0, 100) );
-
+                
+                solucion = p.poblacion.get(0);
                 if( p.poblacion.get(0).getCalidad() == 0 ){
-                    solucion = p.poblacion.get(0);
                     i++;
                     break;
                 }
@@ -57,6 +57,7 @@ public class Main {
             println "--------------- Corrida $j ------------------"
             println "Evaluciones o generaciones: " + i;
             println solucion.bidimensional()
+            println "Calidad  "  + solucion.getCalidad();
             println "---------------------------------------------"
             println ""
             
